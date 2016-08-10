@@ -23,7 +23,6 @@
 require 'date'
 require 'terminal-table'
 require './progressbar'
-require 'paint'
 require 'rubygems'
 
 # Date::ABBR_DAYNAMES will provide us abbreviated Day Names.
