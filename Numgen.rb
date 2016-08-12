@@ -15,6 +15,5 @@ def assign
     @used_AccountNo << proposed_No
     @accountNo = proposed_No
     return @accountNo
-
 end
 end
