@@ -3,7 +3,7 @@ require 'io/console'
 class Menu
   def initialize(name)
     @name = name
-    @items = Array.ne
+    @items = Array.new
   end
 
   @@display_menu_times = 0
@@ -70,7 +70,7 @@ class Menu
     4.times { sleep(1); print " = "  }
     print " The cook just took a toilet break "
     5.times { sleep(1); print " = "  }
-    print "#{@items[dish_selection-1].dish} READY!!"
+    print "#{@items[dish_selection].dish} READY!!"
     puts "\n\n\n"
   end
 
