@@ -169,23 +169,6 @@ if menu1.win?(dish_selection - 1, guessed_price) == true
    pay = gets.chomp.to_i
     if pay == 1; menu1.cooking; sleep(2); system "cls" else system "cls" end
  end
- # puts dish_selection
- # puts guessed_price
- # puts menu1.items[0].dish
- # puts menu1.items[1].dish
- # puts menu1.items[2].dish
- # puts menu1.items[3].dish
- # puts menu1.items[4].dish
- # puts menu1.items[5].dish
- # puts menu1.items[dish_selection].dish
- # puts menu1.items[dish_selection].price
- # puts guessed_price == menu1.items[dish_selection].price
- # system sleep(10)
+
 menu1.randomize_prices
 end
-
-
-
-#Doker
-#catpix
-#artmagic
