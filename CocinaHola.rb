@@ -121,12 +121,12 @@ previous_picks = []
 guessed_price = 1
 pay = nil
 
-until menu1.win?(dish_selection, guessed_price)  do
+until menu1.win?(dish_selection - 1, guessed_price)  do
 
 menu1.display_menu
 dish_selection = gets.chomp.to_i
 
-until (1..menu1.items.size+1).include? dish_selection do
+until (1..menu1.items.size + 1).include? dish_selection do
   system "cls"
   puts "\n\n\n\n PAY ATTENTION! I ONLY TAKE NUMBERS BETWEEN 1 to #{menu1.items.size+1}"
   sleep(2.5)
@@ -138,9 +138,9 @@ end
 if dish_selection == menu1.items.size + 1; system "cls"; puts "\n\n\n\n gracias por visitar cocina hola".upcase; sleep(2.5); system "cls"; exit; end
 
 system "cls"
-menu1.highlight(dish_selection-1)
+menu1.highlight(dish_selection - 1)
 
-if str == "c"; puts "\n\n Pssst... this is the price --> $#{menu1.items[dish_selection-1].price}" end
+if str == "c"; puts "\n\n Pssst... this is the price --> $#{menu1.items[dish_selection - 1].price}" end
 
 puts "\n Type a price here" #ADD TO HIGHLIGH METHOD
 puts "          ↓         " #ADD TO HIGHLIGH METHOD
@@ -148,8 +148,8 @@ puts "          ↓         " #ADD TO HIGHLIGH METHOD
 guessed_price = gets.chomp.to_i
 print "\r"
 
-puts menu1.win?(dish_selection-1, guessed_price)
-if menu1.win?(dish_selection-1, guessed_price) == true
+puts menu1.win?(dish_selection - 1, guessed_price)
+if menu1.win?(dish_selection - 1, guessed_price) == true
    system "cls"
    puts "\n\n\nyou won a delicious #{menu1.items[dish_selection-1].dish} dish".upcase
    puts "\n\n#{menu1.items[dish_selection-1].dish} are $#{menu1.items[dish_selection-1].price}\n"
@@ -169,6 +169,18 @@ if menu1.win?(dish_selection-1, guessed_price) == true
    pay = gets.chomp.to_i
     if pay == 1; menu1.cooking; sleep(2); system "cls" else system "cls" end
  end
+ # puts dish_selection
+ # puts guessed_price
+ # puts menu1.items[0].dish
+ # puts menu1.items[1].dish
+ # puts menu1.items[2].dish
+ # puts menu1.items[3].dish
+ # puts menu1.items[4].dish
+ # puts menu1.items[5].dish
+ # puts menu1.items[dish_selection].dish
+ # puts menu1.items[dish_selection].price
+ # puts guessed_price == menu1.items[dish_selection].price
+ # system sleep(10)
 menu1.randomize_prices
 end
 
